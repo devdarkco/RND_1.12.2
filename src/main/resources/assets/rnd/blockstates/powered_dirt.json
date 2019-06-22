@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "normal": {
+            "model": "rnd:powered_dirt"
+        }
+    }
+}

@@ -1,0 +1,23 @@
+item.debug_stick.name=Debug Stick
+item.advanced_bone_meal.name=Advanced Bone Meal
+item.upgrade_basic.name=Basic Upgrade
+item.upgrade_better.name=Better Upgrade
+item.upgrade_power.name=Power Upgrade
+item.upgrade_creative.name=Creative Upgrade
+
+tile.generator.name=Generator
+tile.powered_dirt.name=Powered Dirt
+
+itemGroup.rndItemsTab=Rnd Items
+itemGroup.rndBlocksTab=Rnd Blocks
+
+gui.config.main_title=Rnd Configs
+
+gui.config.category.blocks=Blocks
+gui.config.category.blocks.tooltip=All block settings
+
+gui.config.category.items=Items Configs
+gui.config.category.items.tooltip=All the mod items configs
+
+gui.config.items.advancedBoneMeal.name=Advanced Bone Meal Range
+gui.config.items.advancedBoneMeal.comment=The range when applying the bone meal

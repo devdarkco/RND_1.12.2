@@ -1,0 +1,16 @@
+[
+{
+  "modid": "rnd",
+  "name": "Rnd(Random)",
+  "description": "Rnd or Random is a mod that is the name.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["DevDarkCo"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
