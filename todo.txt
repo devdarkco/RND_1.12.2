@@ -1,0 +1,1 @@
+todo: fix issue #1 - when the sum of the currentSpeed and the upgradeAmount is equal to seven, the item is not taken from the inventory.
