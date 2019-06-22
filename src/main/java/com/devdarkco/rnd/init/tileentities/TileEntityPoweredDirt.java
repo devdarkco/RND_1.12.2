@@ -73,12 +73,14 @@ public class TileEntityPoweredDirt extends TileEntity implements ITickable {
         isBeingPowered();
         if (isPowered()) {
             tickCrop(this.pos.up());
+            boolean particles = this.world.rand.nextBoolean();
+            if (particles) {
+                ParticleCreator.spawnParticle(EnumParticleTypes.PORTAL, this.world, this.pos.add(0, 0.5, 0), 1, this.world.rand);
+            }
         }
     }
 
-    /**
-     * Update the crop depending on the currentSpeed;
-     */
+    // Update the crop depending on the currentSpeed;
     private void tickCrop(BlockPos pos) {
         IBlockState cropState = this.world.getBlockState(pos);
         Block crop = cropState.getBlock();
@@ -95,24 +97,21 @@ public class TileEntityPoweredDirt extends TileEntity implements ITickable {
         }
     }
 
-    public void setPowered(boolean state) {
+    private void setPowered(boolean state) {
         powered = state;
         markDirty();
     }
 
-    public void isBeingPowered() {
+    //Check if the block is being powered and set variable to the return value
+    private void isBeingPowered() {
         if (this.world.isBlockPowered(this.pos)) {
             this.setPowered(true);
-            boolean particles = this.world.rand.nextBoolean();
-            if (particles) {
-                ParticleCreator.spawnParticle(EnumParticleTypes.REDSTONE, this.world, this.pos, 5, this.world.rand);
-            }
         } else {
             this.setPowered(false);
         }
     }
 
-    public boolean isPowered() {
+    private boolean isPowered() {
         return powered;
     }
 
@@ -130,9 +129,5 @@ public class TileEntityPoweredDirt extends TileEntity implements ITickable {
     //Check if the newSpeed is under or equal to the maxSpeed than return a boolean
     public boolean isUpgradable(int amount){
         return (currentSpeed + amount) <= maxSpeed;
-    }
-
-    public void setPlayer(EntityPlayer player) {
-        this.player = player;
     }
 }
