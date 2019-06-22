@@ -1,6 +1,6 @@
 package com.devdarkco.rnd.init.tileentities;
 
-import com.devdarkco.rnd.util.Debug;
+import com.devdarkco.rnd.util.ChatUtil;
 import com.devdarkco.rnd.util.ParticleCreator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockCrops;
@@ -76,26 +76,23 @@ public class TileEntityPoweredDirt extends TileEntity implements ITickable {
         }
     }
 
-    public void tickCrop(BlockPos pos) {
+    /**
+     * Update the crop depending on the currentSpeed;
+     */
+    private void tickCrop(BlockPos pos) {
         IBlockState cropState = this.world.getBlockState(pos);
         Block crop = cropState.getBlock();
-
         if (!world.isRemote) {
-            //Check if block is a Crop
             if (crop instanceof BlockCrops) {
                 if (crop.getTickRandomly()) {
-                    //Check if the crop still in the pos
                     if (this.world.getBlockState(pos) == cropState) {
                         for (int i = 0; i < getCurrentSpeed(); i++) {
                             crop.updateTick(this.world, pos, cropState, this.world.rand);
                         }
-                    } else {
-                        return;
                     }
                 }
             }
         }
-
     }
 
     public void setPowered(boolean state) {
@@ -108,7 +105,7 @@ public class TileEntityPoweredDirt extends TileEntity implements ITickable {
             this.setPowered(true);
             boolean particles = this.world.rand.nextBoolean();
             if (particles) {
-                ParticleCreator.spawnParticle(EnumParticleTypes.REDSTONE, this.world, this.pos, 15, this.world.rand);
+                ParticleCreator.spawnParticle(EnumParticleTypes.REDSTONE, this.world, this.pos, 5, this.world.rand);
             }
         } else {
             this.setPowered(false);
@@ -123,20 +120,19 @@ public class TileEntityPoweredDirt extends TileEntity implements ITickable {
         return currentSpeed;
     }
 
+    //Increase the speed is the currentSpeed is under the maxSpeed;
     public void increaseSpeed(int amount) {
-        int newValue = currentSpeed + amount;
-        if (newValue > maxSpeed)
-            currentSpeed = maxSpeed;
-        else
-            currentSpeed += amount;
-        Debug.l(getCurrentSpeed());
+        if(isUpgradable(amount)){
+            currentSpeed = currentSpeed+amount;
+        }
+    }
+
+    //Check if the newSpeed is under or equal to the maxSpeed than return a boolean
+    public boolean isUpgradable(int amount){
+        return (currentSpeed + amount) <= maxSpeed;
     }
 
     public void setPlayer(EntityPlayer player) {
         this.player = player;
-    }
-
-    public EntityPlayer getPlayer() {
-        return player;
     }
 }
