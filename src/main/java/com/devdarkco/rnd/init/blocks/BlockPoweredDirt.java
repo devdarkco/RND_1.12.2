@@ -4,6 +4,7 @@ import com.devdarkco.rnd.init.RndItems;
 import com.devdarkco.rnd.init.tileentities.RndBlockTileEntity;
 import com.devdarkco.rnd.init.tileentities.TileEntityPoweredDirt;
 import com.devdarkco.rnd.interfaces.IUpgradable;
+import com.devdarkco.rnd.util.ChatUtil;
 import com.devdarkco.rnd.util.EnumUtil;
 import com.devdarkco.rnd.util.WorldUtil;
 import net.minecraft.block.material.Material;
@@ -53,16 +54,31 @@ public class BlockPoweredDirt extends RndBlockTileEntity<TileEntityPoweredDirt> 
                 switch (heldItem.getMetadata()) {
                     case 0:
                         tileEntityPoweredDirt.increaseSpeed(EnumUtil.UpgradeType.BASIC.getUpgradeValue());
+                        if(tileEntityPoweredDirt.isUpgradable(EnumUtil.UpgradeType.BASIC.getUpgradeValue())){
+                            heldItem.shrink(1);
+                            ChatUtil.chatMessage(playerIn, "Added " + EnumUtil.UpgradeType.BASIC.getUpgradeValue() + " to speed; Current speed: " + tileEntityPoweredDirt.getCurrentSpeed());
+                        } else {
+                            ChatUtil.chatMessage(playerIn, "Already on maxSpeed; (7)");
+                        }
                         break;
                     case 1:
                         tileEntityPoweredDirt.increaseSpeed(EnumUtil.UpgradeType.BETTER.getUpgradeValue());
+                        if(tileEntityPoweredDirt.isUpgradable(EnumUtil.UpgradeType.BASIC.getUpgradeValue())){
+                            heldItem.shrink(1);
+                            ChatUtil.chatMessage(playerIn, "Added " + EnumUtil.UpgradeType.BETTER.getUpgradeValue() + " to speed; Current speed: " + tileEntityPoweredDirt.getCurrentSpeed());
+                        } else {
+                            ChatUtil.chatMessage(playerIn, "Already on maxSpeed; (7)");
+                        }
                         break;
                     case 2:
                         tileEntityPoweredDirt.increaseSpeed(EnumUtil.UpgradeType.POWER.getUpgradeValue());
+                        if(tileEntityPoweredDirt.isUpgradable(EnumUtil.UpgradeType.BASIC.getUpgradeValue())){
+                            heldItem.shrink(1);
+                            ChatUtil.chatMessage(playerIn, "Added " + EnumUtil.UpgradeType.POWER.getUpgradeValue() + " to speed; Current speed: " + tileEntityPoweredDirt.getCurrentSpeed());
+                        } else {
+                            ChatUtil.chatMessage(playerIn, "Already on maxSpeed; (7)");
+                        }
                         break;
-                }
-                if (!playerIn.isCreative()) {
-                    heldItem.shrink(1);
                 }
             } else if (heldItem.getItem() == RndItems.DEBUG_STICK) {
                 playerIn.sendMessage(new TextComponentString("Current speed: " + tileEntityPoweredDirt.getCurrentSpeed()));
