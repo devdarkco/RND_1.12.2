@@ -1,8 +1,15 @@
 todo: fix issue #1 - when the sum of the currentSpeed and the upgradeAmount is equal to seven, the item is not taken from the inventory.
-      fixed - 22/07 - 23:36
+      fixed - 22/06 - 23:36
 todo: remake texture Powered dirt;
+      done - 25/06 - 00:15
 todo: reorganize powered dirt code and respective tile;
-      done - 22/07 - 00:24
+      done - 22/06 - 00:24
 todo: fix issue #2 - names not showing correctly
+      fixed - 24/06 - 20:23
 todo: rethink particles;
+      done - 23/07 - 17:21
 todo: fix issue #3 - redstone power not triggering the cropTick;
+      fixed - 23/06 - 16:12
+todo: remove the upgrades
+todo: add configuration to the maxSpeed
+      done - 23/06 - 18:32

@@ -13,8 +13,11 @@ itemGroup.rndBlocksTab=Rnd Blocks
 
 gui.config.main_title=Rnd Configs
 
-gui.config.category.blocks=Blocks
-gui.config.category.blocks.tooltip=All block settings
+gui.config.category.blocks=Blocks Configs
+gui.config.category.blocks.tooltip=All the mod blocks configs
+
+gui.config.items.poweredDirt.name=Powered Dirt Max Speed
+gui.config.items.poweredDirt.comment=Powered Dirt has a max speed of 7; When the speed is bigger the crops grow faster;
 
 gui.config.category.items=Items Configs
 gui.config.category.items.tooltip=All the mod items configs
