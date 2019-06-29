@@ -1,5 +1,6 @@
 package com.devdarkco.rnd.init.tileentities;
 
+import com.devdarkco.rnd.config.RndConfigs;
 import com.devdarkco.rnd.util.ChatUtil;
 import com.devdarkco.rnd.util.ParticleCreator;
 import net.minecraft.block.Block;
@@ -18,7 +19,7 @@ public class TileEntityPoweredDirt extends TileEntity implements ITickable {
 
     private boolean powered;
     private int currentSpeed = 1;
-    private int maxSpeed = 7;
+    private int maxSpeed = RndConfigs.poweredDirtMaxSpeed;
 
     private EntityPlayer player;
 
