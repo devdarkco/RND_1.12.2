@@ -10,6 +10,7 @@ public class RndItem extends Item implements IHasModel {
     public RndItem(String name) {
         setRegistryName(name);
         setCreativeTab(Rnd.rndItemsTab);
+        setUnlocalizedName(name);
 
         RndItems.ITEMS.add(this);
     }
