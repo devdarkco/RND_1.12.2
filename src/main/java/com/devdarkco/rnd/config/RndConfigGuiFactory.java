@@ -37,6 +37,7 @@ public class RndConfigGuiFactory implements IModGuiFactory {
         private static List<IConfigElement> getConfigElements() {
             List<IConfigElement> list = new ArrayList<IConfigElement>();
             list.add(new DummyCategoryElement(I18n.format("gui.config.category.items"), "gui.config.category.items", CategoryEntryItems.class));
+            list.add(new DummyCategoryElement(I18n.format("gui.config.category.blocks"), "gui.config.category.blocks", CategoryEntryBlocks.class));
             return list;
         }
 
@@ -53,6 +54,24 @@ public class RndConfigGuiFactory implements IModGuiFactory {
                 ConfigElement categoryItems = new ConfigElement(config.getCategory(RndConfigs.CATEGORY_NAME_ITEMS));
                 List<IConfigElement> propertiesOnScreen = categoryItems.getChildElements();
                 String windowTitle = I18n.format("gui.config.category.items");
+                return new GuiConfig(owningScreen, propertiesOnScreen, owningScreen.modID, this.configElement.requiresWorldRestart() || this.owningScreen.allRequireWorldRestart, this.configElement.requiresMcRestart() || this.owningScreen.allRequireMcRestart, windowTitle);
+            }
+
+        }
+
+        public static class CategoryEntryBlocks extends CategoryEntry {
+
+            public CategoryEntryBlocks(GuiConfig owningScreen, GuiConfigEntries owningEntryList,
+                                      IConfigElement configElement) {
+                super(owningScreen, owningEntryList, configElement);
+            }
+
+            @Override
+            protected GuiScreen buildChildScreen() {
+                Configuration config = RndConfigs.getConfig();
+                ConfigElement categoryBlocks = new ConfigElement(config.getCategory(RndConfigs.CATEGORY_NAME_BLOCKS));
+                List<IConfigElement> propertiesOnScreen = categoryBlocks.getChildElements();
+                String windowTitle = I18n.format("gui.config.category.blocks");
                 return new GuiConfig(owningScreen, propertiesOnScreen, owningScreen.modID, this.configElement.requiresWorldRestart() || this.owningScreen.allRequireWorldRestart, this.configElement.requiresMcRestart() || this.owningScreen.allRequireMcRestart, windowTitle);
             }
 
