@@ -1,8 +1,10 @@
 package com.devdarkco.rnd.util;
 
+import net.minecraft.util.text.TextFormatting;
+
 public class EnumUtil {
 
-    public static enum UpgradeType {
+    public enum UpgradeType {
         BASIC(0, "basic", 1),
         BETTER(1, "better", 2),
         POWER(2, "power", 3);
@@ -11,7 +13,7 @@ public class EnumUtil {
         private String name;
         private int upgradeValue;
 
-        private UpgradeType(int metadata, String name, int upgradeValue){
+        UpgradeType(int metadata, String name, int upgradeValue){
             this.metadata = metadata;
             this.name = name;
             this.upgradeValue = upgradeValue;
