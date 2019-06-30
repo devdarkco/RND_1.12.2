@@ -2,6 +2,7 @@ package com.devdarkco.rnd.init.item;
 
 import com.devdarkco.rnd.Rnd;
 import com.devdarkco.rnd.util.EnumUtil;
+import com.devdarkco.rnd.util.RarityHelper;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -19,7 +20,7 @@ public class ItemUpgrade extends RndItem {
     public static final int POWER = 2;
 
     public ItemUpgrade(String name) {
-        super(name);
+        super(name, RarityHelper.Rarity.COMMON);
         setUnlocalizedName("upgrade");
         this.setHasSubtypes(true);
     }

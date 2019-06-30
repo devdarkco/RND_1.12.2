@@ -1,8 +1,10 @@
 package com.devdarkco.rnd.init.item;
 
-public class ItemDebugStick extends RndItem{
+import com.devdarkco.rnd.util.RarityHelper;
+
+public class ItemDebugStick extends RndItem {
 
     public ItemDebugStick(String name) {
-        super(name);
+        super(name, RarityHelper.Rarity.RARE);
     }
 }
