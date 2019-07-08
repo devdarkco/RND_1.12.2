@@ -4,9 +4,11 @@ item.upgrade_basic.name=Basic Upgrade
 item.upgrade_better.name=Better Upgrade
 item.upgrade_power.name=Power Upgrade
 item.upgrade_creative.name=Creative Upgrade
+item.knowledge_fragment.name=Knowledge Fragment
 
 tile.generator.name=Generator
 tile.powered_dirt.name=Powered Dirt
+tile.growth_pedestal.name=Growth Pedestal
 
 itemGroup.rndItemsTab=Rnd Items
 itemGroup.rndBlocksTab=Rnd Blocks

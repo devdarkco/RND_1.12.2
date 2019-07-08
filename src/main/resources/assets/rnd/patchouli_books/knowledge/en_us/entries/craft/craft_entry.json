@@ -1,0 +1,11 @@
+{
+  "name": "Craft",
+  "icon": "rnd:upgrade",
+  "category": "craft_category",
+  "pages": [
+    {
+      "type": "text",
+      "text": "All the knowledge!"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Knowledge",
+  "icon": "rnd:knowledge_fragment",
+  "category": "knowledge_category",
+  "pages": [
+    {
+      "type": "text",
+      "text": "All the knowledge!"
+    }
+  ]
+}

@@ -13,6 +13,6 @@ public class RndBlocksTab extends CreativeTabs {
 
     @Override
     public ItemStack getTabIconItem() {
-        return new ItemStack(Item.getItemFromBlock(RndBlocks.RND_GENERATOR));
+        return new ItemStack(Item.getItemFromBlock(RndBlocks.POWERED_DIRT));
     }
 }

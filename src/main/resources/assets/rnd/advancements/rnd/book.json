@@ -1,0 +1,33 @@
+{
+  "display": {
+    "description": {
+      "text": "Witch, they know more than us... Go to a Swamp Hut and you will find out.",
+      "color": "white"
+    },
+    "title": {
+      "text": "Most of the knowledge comes from books...",
+      "color": "red"
+    },
+    "icon": {
+      "item": "patchouli:guide_book",
+      "data": 0
+    }
+  },
+  "criteria": {
+    "get_book": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{
+          "item": "patchouli:guide_book",
+
+          "data": 0
+        }]
+      }
+    }
+  },
+  "rewards": {},
+  "requirements": [
+    ["get_book"]
+  ],
+  "parent": "rnd:rnd/initial"
+}
