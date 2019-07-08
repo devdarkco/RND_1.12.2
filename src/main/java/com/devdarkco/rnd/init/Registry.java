@@ -1,6 +1,8 @@
 package com.devdarkco.rnd.init;
 
 import com.devdarkco.rnd.init.item.ItemAdvancedBoneMeal;
+import com.devdarkco.rnd.init.tileentities.TileEntityGrowthPedestal;
+import com.devdarkco.rnd.render.RenderGrowthPedestal;
 import net.minecraft.block.BlockDispenser;
 import net.minecraft.dispenser.IBlockSource;
 import net.minecraft.init.Bootstrap;
@@ -8,6 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 
 public class Registry {
 
@@ -21,5 +24,7 @@ public class Registry {
                 return super.dispenseStack(source, stack);
             }
         });
+
+        ClientRegistry.bindTileEntitySpecialRenderer(TileEntityGrowthPedestal.class, new RenderGrowthPedestal());
     }
 }

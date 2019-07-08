@@ -18,5 +18,7 @@ public class WorldUtil {
         return world.isRemote;
     }
 
-
+    public static boolean isNightTime(World world){
+        return world.getWorldInfo().getWorldTime() > 12500;
+    }
 }
